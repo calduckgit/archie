@@ -54,7 +54,7 @@ class KickCog(commands.Cog):
             return
         
         try:
-            reason = None
+            reason = "Kicked by moderator."
             if ctx.message.content:
                 parts = ctx.message.content.split()
                 if "?r" in parts:
