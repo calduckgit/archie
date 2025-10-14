@@ -3,6 +3,7 @@ from discord.ext import commands
 import json
 import os
 import uuid
+import discord.utils
 
 class WarnSystem(commands.Cog):
     def __init__(self, bot):
