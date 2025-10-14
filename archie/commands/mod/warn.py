@@ -9,11 +9,19 @@ class WarnSystem(commands.Cog):
         self.bot = bot
         self.warn_data_path = "warnings.json"
 
-        if not os.path.exists(self.warn_data_path):
+        if not os.path.exists(self.warn_data_path) or os.path.getsize(self.warn_data_path) == 0:
             with open(self.warn_data_path, "w") as f:
                 json.dump({}, f)
-        with open(self.warn_data_path, "r") as f:
-            self.warnings = json.load(f)
+
+
+        try:
+            with open(self.warn_data_path, "r") as f:
+                self.warnings = json.load(f)
+        except json.JSONDecodeError:
+            self.warnings = {}
+            with open(self.warn_data_path, "w") as f:
+                json.dump(self.warnings, f)
+
 
     def save_warnings(self):
         with open(self.warn_data_path, "w") as f:
