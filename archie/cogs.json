@@ -1,6 +1,7 @@
 { "cogs": [
     "commands.mod.kick",
     "commands.mod.warn",
-    "commands.misc.ping"
+    "commands.misc.ping",
+    "commands.mod.clear"
     ]
 }
