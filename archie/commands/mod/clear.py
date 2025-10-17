@@ -76,8 +76,8 @@ class ClearCog(commands.Cog):
 
         if view.value:
             try:
-                deleted = await ctx.channel.purge(limit=amount + 1)
-                count_deleted = max(0, len(deleted) - 1)
+                deleted = await ctx.channel.purge(limit=amount + 2)
+                count_deleted = max(0, len(deleted) - 2)
                 success_embed = discord.Embed(
                     title="Success: messages cleared.",
                     description=f"Deleted the following amount of messages:\n```{count_deleted}```",
